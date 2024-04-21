@@ -70,10 +70,6 @@ public class Gate : MonoBehaviour
         {
             case UpgradeType.Income:
                 return ConstantVariables.UpgradeTypes.Income;
-            case UpgradeType.FireRate:
-                return ConstantVariables.UpgradeTypes.FireRate;
-            case UpgradeType.FireRange:
-                return ConstantVariables.UpgradeTypes.FireRange;
             default:
                 return "?";
         }

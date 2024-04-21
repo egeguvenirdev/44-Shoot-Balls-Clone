@@ -8,16 +8,16 @@ public class MoneyManager : MonoSingleton<MoneyManager>
     [SerializeField] private int addMoney = 0;
     private float moneyMultiplier = 1;
 
-    public float MoneyMultipler
+    private float MoneyMultipler
     {
         get => moneyMultiplier;
-        private set => moneyMultiplier = value;
+        set => moneyMultiplier = value;
     }
 
-    public float Money
+    private float Money
     {
         get => PlayerPrefs.GetFloat(ConstantVariables.TotalMoneyValue.TotalMoney, 0);
-        private set
+        set
         {
             float calculatedMoney = value;
             if (value > 0)
@@ -32,7 +32,6 @@ public class MoneyManager : MonoSingleton<MoneyManager>
     public void Init()
     {
         ActionManager.GameplayUpgrade += OnUpdateMoney;
-        ActionManager.UpdateMoneyMultiplier += OnUpdateMoneyMultiplier;
         ActionManager.CheckMoneyAmount += OnCheckMoneyAmount;
 
         if (addMoney > 0)
@@ -47,20 +46,13 @@ public class MoneyManager : MonoSingleton<MoneyManager>
     public void DeInit()
     {
         ActionManager.GameplayUpgrade -= OnUpdateMoney;
-        ActionManager.UpdateMoneyMultiplier -= OnUpdateMoneyMultiplier;
         ActionManager.CheckMoneyAmount -= OnCheckMoneyAmount;
     }
 
     private void OnUpdateMoney(UpgradeType upgradeType, float value)
     {
-        if (upgradeType != UpgradeType.Money) return;
-
-        Money = value;
-    }
-
-    private void OnUpdateMoneyMultiplier(float value)
-    {
-        MoneyMultipler = value;
+        if (upgradeType == UpgradeType.Money) Money = value;
+        if (upgradeType == UpgradeType.Income) MoneyMultipler = value; ;
     }
 
     private bool OnCheckMoneyAmount(float value)

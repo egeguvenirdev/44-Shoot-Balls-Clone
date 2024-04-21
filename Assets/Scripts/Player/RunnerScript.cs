@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
 using DG.Tweening;
@@ -27,6 +26,8 @@ public class RunnerScript : MonoBehaviour
 
     [Header("Animations")]
     [SerializeField] private AnimationClip runAnim;
+    [SerializeField] private AnimationClip idleRunAnim;
+    [SerializeField] private AnimationClip idleAnim;
     private AnimationClip currentAnim;
 
     private Vector3 oldPosition;

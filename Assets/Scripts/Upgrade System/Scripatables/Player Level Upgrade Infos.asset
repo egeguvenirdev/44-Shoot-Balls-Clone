@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cc64eb16a814a5438a9ef468c37d54a, type: 3}
-  m_Name: Income Upgrade Infos
+  m_Name: Player Level Upgrade Infos
   m_EditorClassIdentifier: 
   upgradeInfos:
     upgradeType: 2

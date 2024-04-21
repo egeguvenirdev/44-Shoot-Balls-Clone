@@ -4,11 +4,13 @@ using UnityEngine;
 
 public enum UpgradeType
 {
+    Money,
+    PlayerLevelUpgrade,
     Income,
-    FireRate,
-    FireRange,
-    Health,
-    Money
+    Distance,
+    Speed,
+    DoubleBalls,
+    DoubleShooter
 }
 
 public enum EnemyType

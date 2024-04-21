@@ -21,12 +21,6 @@ public class UpgradeManager : MonoBehaviour
             case UpgradeType.Income:
                 IncomeUpgrade(value);
                 break;
-            case UpgradeType.FireRange:
-                FireRangeUpgrade(value);
-                break;
-            case UpgradeType.FireRate:
-                FireRateUpgrade(value);
-                break;
             default:
                 Debug.Log("NOTHING");
                 break;
@@ -41,15 +35,5 @@ public class UpgradeManager : MonoBehaviour
             return;
         }
         ActionManager.UpdateMoneyMultiplier?.Invoke(value);
-    }
-
-    private void FireRangeUpgrade(float value)
-    {
-
-    }
-
-    private void FireRateUpgrade(float value)
-    {
-
     }
 }

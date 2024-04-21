@@ -33,4 +33,9 @@ public class PlayerManager : MonoBehaviour
         runnerScript.DeInit();
         upgradeManager.DeInit();
     }
+
+    private IEnumerator ShootingCo()
+    {
+        return null;
+    }
 }
