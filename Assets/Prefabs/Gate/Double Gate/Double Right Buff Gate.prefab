@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7031275604705234503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9200344424543500292}
+  m_Layer: 0
+  m_Name: Double Right Buff Gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9200344424543500292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031275604705234503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8763394349341907447}
+  - {fileID: 2435908813552678165}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6299049714450723300
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9200344424543500292}
+    m_Modifications:
+    - target: {fileID: 6406221812638122944, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: otherTrigger
+      value: 
+      objectReference: {fileID: 3258300616138019042}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9074611219010215499, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+      propertyPath: m_Name
+      value: DeBuff  Gate
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+--- !u!4 &2435908813552678165 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8549149855779423473, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+  m_PrefabInstance: {fileID: 6299049714450723300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8458901082665106432 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2454098823899237860, guid: f63708b087d43b947977e3e24f5abe0d, type: 3}
+  m_PrefabInstance: {fileID: 6299049714450723300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8714844158638160985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9200344424543500292}
+    m_Modifications:
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731655172065017620, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: m_Name
+      value: Buff Gate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400035885390258847, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+      propertyPath: otherTrigger
+      value: 
+      objectReference: {fileID: 8458901082665106432}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+--- !u!65 &3258300616138019042 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6180794335292042427, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+  m_PrefabInstance: {fileID: 8714844158638160985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8763394349341907447 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 102611013197850030, guid: b5e5a88d264d9c149ab057496cb3fcd7, type: 3}
+  m_PrefabInstance: {fileID: 8714844158638160985}
+  m_PrefabAsset: {fileID: 0}
