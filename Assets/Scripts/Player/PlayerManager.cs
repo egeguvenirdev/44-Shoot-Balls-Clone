@@ -7,8 +7,8 @@ public class PlayerManager : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private RunnerScript runnerScript;
+    [SerializeField] private PlayerShooter shooter;
     [SerializeField] private Transform characterTransform;
-    private UpgradeManager upgradeManager;
 
     private GameManager gameManager;
     private MoneyManager moneyManager;
@@ -23,15 +23,24 @@ public class PlayerManager : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         moneyManager = MoneyManager.Instance;
-        upgradeManager = FindObjectOfType<UpgradeManager>();
+
+        OnStartShooting();
         runnerScript.Init();
-        upgradeManager.Init();
     }
 
     public void DeInit()
     {
         runnerScript.DeInit();
-        upgradeManager.DeInit();
+    }
+
+    public void OnStartShooting()
+    {
+
+    }
+
+    public void OnStopShooting()
+    {
+
     }
 
     private IEnumerator ShootingCo()

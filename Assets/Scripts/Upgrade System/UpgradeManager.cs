@@ -4,36 +4,47 @@ using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
+    [SerializeField] private UpgradeBase[] upgrades;
+
     public void Init()
     {
         ActionManager.GameplayUpgrade += OnUpgrade;
+        ActionManager.GamePlayUpgradeValue += OnGamePlayUpgradeValue;
+
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            upgrades[i].Init();
+        }
     }
 
     public void DeInit()
     {
         ActionManager.GameplayUpgrade -= OnUpgrade;
-    }
+        ActionManager.GamePlayUpgradeValue -= OnGamePlayUpgradeValue;
 
-    public void OnUpgrade(UpgradeType type, float value)
-    {
-        switch (type)
+        for (int i = 0; i < upgrades.Length; i++)
         {
-            case UpgradeType.Income:
-                IncomeUpgrade(value);
-                break;
-            default:
-                Debug.Log("NOTHING");
-                break;
+            upgrades[i].DeInit();
         }
     }
 
-    private void IncomeUpgrade(float value)
+    private void OnUpgrade(UpgradeType type, float value)
     {
-        if (value < 1)
+        for (int i = 0; i < upgrades.Length; i++)
         {
-            ActionManager.UpdateMoneyMultiplier?.Invoke(1);
-            return;
+            if (upgrades[i].UpgradeType == type)
+            {
+                upgrades[i].OnUpgrade(value);
+            }
         }
-        ActionManager.UpdateMoneyMultiplier?.Invoke(value);
+    }
+
+    private float OnGamePlayUpgradeValue(UpgradeType upgradeType)
+    {
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            if(upgrades[i].UpgradeType == upgradeType) return upgrades[i].GetCurrentValue();
+        }
+        return 0;
     }
 }

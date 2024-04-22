@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeInfos: {fileID: 11400000, guid: 57dd48b02a6928e46933df793bee07a4, type: 2}
+  upgradeType: 0
 --- !u!1 &1478932723
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeInfos: {fileID: 11400000, guid: d075a39c07e555d4ea893562b846668a, type: 2}
+  upgradeType: 0
 --- !u!1 &1543190593
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeInfos: {fileID: 11400000, guid: a8305a250b72ed847ad63ade7dda05ad, type: 2}
+  upgradeType: 0
 --- !u!1 &1694662469
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeInfos: {fileID: 11400000, guid: f7a3c9a03d70eb9448a4103ed15c566c, type: 2}
+  upgradeType: 0
 --- !u!1 &2099351507
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeInfos: {fileID: 11400000, guid: 42f7349930a3c2e40aa19882ae2f5453, type: 2}
+  upgradeType: 0
 --- !u!1 &7207826226394082242
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeInfos: {fileID: 11400000, guid: b9658a94ec5ff4145beb5797aae5289d, type: 2}
+  upgradeType: 0
 --- !u!1 &7207826227498232940
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,3 +326,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e7923c40bf3d5419c445fb1c4fbcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgrades:
+  - {fileID: 2517839231263500560}
+  - {fileID: 271401382}
+  - {fileID: 2099351509}
+  - {fileID: 1694662471}
+  - {fileID: 1543190595}
+  - {fileID: 1478932725}

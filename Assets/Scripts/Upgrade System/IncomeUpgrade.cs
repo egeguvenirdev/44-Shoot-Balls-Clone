@@ -7,6 +7,5 @@ public class IncomeUpgrade : UpgradeBase
     public override void OnUpgrade(float upgradeValue)
     {
         base.OnUpgrade(upgradeValue);
-        ActionManager.GameplayUpgrade?.Invoke(UpgradeType.Income, upgradeInfos.GetUpgradeInfos.CurrentValue);
     }
 }

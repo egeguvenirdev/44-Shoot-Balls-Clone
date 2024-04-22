@@ -668,6 +668,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116651706218006184, guid: d356f5de8c400e84dbba102c8b8eaed8, type: 3}
+      propertyPath: upgradeType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 657012160009686896, guid: d356f5de8c400e84dbba102c8b8eaed8, type: 3}
+      propertyPath: upgradeType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737176802518898664, guid: d356f5de8c400e84dbba102c8b8eaed8, type: 3}
+      propertyPath: upgradeType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8286306661346076680, guid: d356f5de8c400e84dbba102c8b8eaed8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1069,6 +1081,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1461301021}
     m_Modifications:
+    - target: {fileID: 271401382, guid: 8b862586f6783b940812a6ca375ef4e8, type: 3}
+      propertyPath: upgradeType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478932725, guid: 8b862586f6783b940812a6ca375ef4e8, type: 3}
+      propertyPath: upgradeType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543190595, guid: 8b862586f6783b940812a6ca375ef4e8, type: 3}
+      propertyPath: upgradeType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694662471, guid: 8b862586f6783b940812a6ca375ef4e8, type: 3}
+      propertyPath: upgradeType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099351509, guid: 8b862586f6783b940812a6ca375ef4e8, type: 3}
+      propertyPath: upgradeType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2517839231263500560, guid: 8b862586f6783b940812a6ca375ef4e8, type: 3}
+      propertyPath: upgradeType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7207826227498232940, guid: 8b862586f6783b940812a6ca375ef4e8, type: 3}
       propertyPath: m_Name
       value: Upgrade Manager

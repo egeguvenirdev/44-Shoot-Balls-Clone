@@ -20,12 +20,6 @@ public static class ConstantVariables
         public const string SkillLevel = nameof(SkillLevel);
     }
 
-    public static class UpgradeValues
-    {
-        public const string UpgradeCurrentValue = nameof(UpgradeCurrentValue);
-        public const string UpgradeIncrementalValue = nameof(UpgradeIncrementalValue);
-    }
-
     public static class UpgradePrices
     {
         public const string CurrentPrice = nameof(CurrentPrice);

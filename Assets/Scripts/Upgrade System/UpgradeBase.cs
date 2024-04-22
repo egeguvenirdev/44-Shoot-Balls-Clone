@@ -6,6 +6,9 @@ public class UpgradeBase : MonoBehaviour
 {
     [Header("Upgrade Settings")]
     [SerializeField] protected UpgradeInfosScriptable upgradeInfos;
+    [SerializeField] private UpgradeType upgradeType;
+
+    public UpgradeType UpgradeType { get => upgradeType; private set => upgradeType = value; }
 
     public void Init()
     {
