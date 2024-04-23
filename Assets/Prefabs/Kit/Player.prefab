@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 7334631501480717704}
   - component: {fileID: 7334631501480717705}
   - component: {fileID: 182378436109458471}
+  - component: {fileID: 3451749105878702818}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -166,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runnerScript: {fileID: 7334631501480717705}
-  shooter: {fileID: 0}
+  shooter: {fileID: 3451749105878702818}
   ballMachine: {fileID: 8071955364005531324}
   characterTransform: {fileID: 7334631500952762661}
 --- !u!114 &7334631501480717705
@@ -211,6 +212,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1000
   dirMultiplier: 100
+--- !u!114 &3451749105878702818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334631501480717700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86163bc64df54648b5fa68443907ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animancer: {fileID: 1440037956}
+  shootingCooldown: 1
 --- !u!1 &8071955362746714890
 GameObject:
   m_ObjectHideFlags: 0

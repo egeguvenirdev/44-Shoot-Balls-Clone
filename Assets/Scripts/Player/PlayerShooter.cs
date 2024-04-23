@@ -10,16 +10,13 @@ public class PlayerShooter : MonoBehaviour
 
     [Header("Shooting Settings")]
     [SerializeField] private float shootingCooldown = 1f;
-    private float speedMultiplier;
+    private float speedMultiplier = 1;
 
     public void Init(BallMachine ballMachine)
     {
         this.ballMachine = ballMachine;
         ActionManager.DistributeGameplayUpgradeValue += OnSpeedUpgrade;
-    }
 
-    public void OnStartShooting()
-    {
         StartCoroutine(ShootCo());
     }
 
@@ -31,7 +28,7 @@ public class PlayerShooter : MonoBehaviour
 
     private void OnSpeedUpgrade(UpgradeType upgradeType, float value)
     {
-        if(upgradeType == UpgradeType.Speed)
+        if (upgradeType == UpgradeType.Speed)
         {
             speedMultiplier = value;
         }
@@ -44,6 +41,7 @@ public class PlayerShooter : MonoBehaviour
             //instantiate balls
             ballMachine.GetBalls();
             ballMachine.SlideTheBalls();
+            Debug.Log(shootingCooldown + " + " + speedMultiplier);
             yield return CoroutineManager.GetTime(shootingCooldown / speedMultiplier, 30f);
         }
     }

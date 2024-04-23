@@ -33,7 +33,7 @@ public class BallMachine : MonoBehaviour
     {
         for (int i = 0; i < balls.Count; i++)
         {
-            balls[i].Init(ballInstantiatePoints[i].position, currentBallValue, currentSpeedValue);
+            balls[i].Init(ballInstantiatePoints[i].localPosition, currentBallValue, currentSpeedValue);
         }
     }
 
@@ -62,10 +62,10 @@ public class BallMachine : MonoBehaviour
     {
         for (int i = 1; i < balls.Count; i++)
         {
-            balls[i].MoveForward(balls[i - 1].transform.position, currentSpeedValue);
+            balls[i].MoveForward(ballInstantiatePoints[i - 1].localPosition, currentSpeedValue);
         }
 
-        balls[0].Init(ballInstantiatePoints[0].position, currentBallValue, currentSpeedValue);
+        balls[0].Init(ballInstantiatePoints[3].localPosition, currentBallValue, currentSpeedValue);
         ReAdjustTheBallList();
     }
 

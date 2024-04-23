@@ -32,12 +32,14 @@ public class PlayerManager : MonoBehaviour
     {
         OnStartShooting();
         runnerScript.Init();
+        shooter.Init(ballMachine);
     }
 
     public void DeInit()
     {
         runnerScript.DeInit();
         ballMachine.DeInit();
+        shooter.DeInit();
     }
 
     public void OnStartShooting()
