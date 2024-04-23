@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpeedUpgrade : UpgradeBase
 {
-    public override void OnUpgrade(float upgradeValue)
+    public override void OnUpgrade(UpgradeType upgradeType, float upgradeValue)
     {
-        base.OnUpgrade(upgradeValue);
+        base.OnUpgrade(upgradeType, upgradeValue);
     }
 }

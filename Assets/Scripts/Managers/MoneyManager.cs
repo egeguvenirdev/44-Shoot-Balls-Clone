@@ -31,7 +31,7 @@ public class MoneyManager : MonoSingleton<MoneyManager>
 
     public void Init()
     {
-        ActionManager.GameplayUpgrade += OnUpdateMoney;
+        ActionManager.GatherGameplayUpgrade += OnUpdateMoney;
         ActionManager.CheckMoneyAmount += OnCheckMoneyAmount;
 
         if (addMoney > 0)
@@ -45,7 +45,7 @@ public class MoneyManager : MonoSingleton<MoneyManager>
 
     public void DeInit()
     {
-        ActionManager.GameplayUpgrade -= OnUpdateMoney;
+        ActionManager.GatherGameplayUpgrade -= OnUpdateMoney;
         ActionManager.CheckMoneyAmount -= OnCheckMoneyAmount;
     }
 

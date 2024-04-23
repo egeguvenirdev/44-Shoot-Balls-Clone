@@ -5186,6 +5186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8642831168729330629}
     m_Modifications:
+    - target: {fileID: 33362924069677061, guid: bc9596903c1883a45be48e4e521f378f, type: 3}
+      propertyPath: m_text
+      value: Player Level
+      objectReference: {fileID: 0}
     - target: {fileID: 33362925575755506, guid: bc9596903c1883a45be48e4e521f378f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5272,7 +5276,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 33362925575755507, guid: bc9596903c1883a45be48e4e521f378f, type: 3}
       propertyPath: m_Name
-      value: Fie Rate Card
+      value: Player Level Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494283136508887889, guid: bc9596903c1883a45be48e4e521f378f, type: 3}
+      propertyPath: upgradeType
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc9596903c1883a45be48e4e521f378f, type: 3}
@@ -5301,7 +5309,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5312318055085956424, guid: de8cd636d30e33c4d849358660b7ad6c, type: 3}
       propertyPath: m_Name
-      value: Fire Range Card
+      value: Income Card
       objectReference: {fileID: 0}
     - target: {fileID: 5312318055085956425, guid: de8cd636d30e33c4d849358660b7ad6c, type: 3}
       propertyPath: m_Pivot.x
@@ -5387,6 +5395,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5312318056792449982, guid: de8cd636d30e33c4d849358660b7ad6c, type: 3}
+      propertyPath: m_text
+      value: Income
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398361994058414190, guid: de8cd636d30e33c4d849358660b7ad6c, type: 3}
+      propertyPath: upgradeType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de8cd636d30e33c4d849358660b7ad6c, type: 3}
 --- !u!114 &116651706218006184 stripped
@@ -5412,6 +5428,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8642831168729330629}
     m_Modifications:
+    - target: {fileID: 209272595068043861, guid: 92f5eea6cd9af384dabc2cb9aa1c1994, type: 3}
+      propertyPath: m_text
+      value: Balls
+      objectReference: {fileID: 0}
     - target: {fileID: 209272597044165794, guid: 92f5eea6cd9af384dabc2cb9aa1c1994, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5498,7 +5518,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 209272597044165795, guid: 92f5eea6cd9af384dabc2cb9aa1c1994, type: 3}
       propertyPath: m_Name
-      value: Income Card
+      value: Balls Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767678911935233509, guid: 92f5eea6cd9af384dabc2cb9aa1c1994, type: 3}
+      propertyPath: upgradeType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767678911935233509, guid: 92f5eea6cd9af384dabc2cb9aa1c1994, type: 3}
+      propertyPath: upgradeValue
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f5eea6cd9af384dabc2cb9aa1c1994, type: 3}

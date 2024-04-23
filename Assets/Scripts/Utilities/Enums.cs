@@ -5,8 +5,9 @@ using UnityEngine;
 public enum UpgradeType
 {
     Money,
-    PlayerLevelUpgrade,
     Income,
+    BallsUpgrade,
+    PlayerLevelUpgrade,
     Distance,
     Speed,
     DoubleBalls,
@@ -21,15 +22,9 @@ public enum EnemyType
 
 public enum PoolObjectType
 {
-    PlayerThrowable,
-    PlayerGravityThrowable,
-    RangeEnemy,
-    MeeleEnemy,
-    EnemyThrowable,
-    SlideText,
-    Coin,
-    Health,
-    BloodParticle
+    Ball,
+    BloodParticle,
+    SlideText
 }
 
 [System.Flags]

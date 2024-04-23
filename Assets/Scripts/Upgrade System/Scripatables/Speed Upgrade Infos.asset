@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Speed Upgrade Infos
   m_EditorClassIdentifier: 
   upgradeInfos:
-    upgradeType: 2
+    upgradeType: 5
     minValue: 1
     maxValue: 2
     currentValue: 0

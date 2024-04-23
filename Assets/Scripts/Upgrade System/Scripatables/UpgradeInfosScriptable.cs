@@ -31,5 +31,7 @@ public class UpgradeInfosScriptable : ScriptableObject
                 if (currentValue < minValue) currentValue = minValue;
             }
         }
+
+        public void ClearCurrentValue() => currentValue = minValue;
     }
 }

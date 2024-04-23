@@ -65,13 +65,13 @@ public class CollectableBase : PoolableObjectBase, ICollectable
                     MoveMoneyArea();
                     return;
                 }
-                ActionManager.GameplayUpgrade?.Invoke(upgradeType, upgradeValue);
+                ActionManager.GatherGameplayUpgrade?.Invoke(upgradeType, upgradeValue);
             });
 
             return;
         }
 
-        ActionManager.GameplayUpgrade?.Invoke(upgradeType, upgradeValue);
+        ActionManager.GatherGameplayUpgrade?.Invoke(upgradeType, upgradeValue);
     }
 
     private void MoveMoneyArea()
@@ -94,7 +94,7 @@ public class CollectableBase : PoolableObjectBase, ICollectable
             .SetId(GetHashCode())
             .OnComplete(() =>
             {
-                ActionManager.GameplayUpgrade?.Invoke(upgradeType, upgradeValue);
+                ActionManager.GatherGameplayUpgrade?.Invoke(upgradeType, upgradeValue);
             });
 
         transform.DOScale(Vector3.zero, .2f)

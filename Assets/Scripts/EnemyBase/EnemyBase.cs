@@ -149,7 +149,7 @@ public abstract class EnemyBase : PoolableObjectBase, IDamageable
         animancer.enabled = false;
         OpenRagdoll(hittersPos);
 
-        ActionManager.GameplayUpgrade?.Invoke(UpgradeType.Money, money);
+        ActionManager.GatherGameplayUpgrade?.Invoke(UpgradeType.Money, money);
 
         yield return CoroutineManager.GetTime(2f, 30f);
         gameObject.SetActive(false);

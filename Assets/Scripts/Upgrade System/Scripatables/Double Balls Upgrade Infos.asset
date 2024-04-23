@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Double Balls Upgrade Infos
   m_EditorClassIdentifier: 
   upgradeInfos:
-    upgradeType: 2
+    upgradeType: 6
     minValue: 1
     maxValue: 2
     currentValue: 0
