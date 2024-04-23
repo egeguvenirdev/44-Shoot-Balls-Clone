@@ -14,8 +14,6 @@ public class UpgradeBase : MonoBehaviour
     {
         ActionManager.DistributeGameplayUpgradeValue?.Invoke(upgradeType, upgradeInfos.GetUpgradeInfos.CurrentValue);
         ActionManager.ClearGameplayValues += OnClearValue;
-
-        Debug.Log(upgradeType + " upgradeValue");
     }
 
     public void DeInit()
@@ -27,7 +25,6 @@ public class UpgradeBase : MonoBehaviour
     {
         if (this.upgradeType == upgradeType)
         {
-            Debug.Log(upgradeType + " upgradeValue");
             upgradeInfos.GetUpgradeInfos.CurrentValue = upgradeValue;
             ActionManager.DistributeGameplayUpgradeValue?.Invoke(this.upgradeType, upgradeInfos.GetUpgradeInfos.CurrentValue);
         }
