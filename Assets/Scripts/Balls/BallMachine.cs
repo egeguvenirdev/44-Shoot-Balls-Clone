@@ -54,8 +54,10 @@ public class BallMachine : MonoBehaviour
 
     public float GetBalls()
     {
+        float ballValue = balls[0].CurrentBallValue;
         balls[0].DeInit();
-        return balls[0].CurrentBallValue;
+        SlideTheBalls();
+        return ballValue;
     }
 
     public void SlideTheBalls()

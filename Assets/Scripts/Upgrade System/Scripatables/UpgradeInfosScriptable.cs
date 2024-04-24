@@ -23,7 +23,12 @@ public class UpgradeInfosScriptable : ScriptableObject
         public float MaxValue { get => maxValue; set => maxValue = value; }
         public float CurrentValue
         {
-            get => currentValue;
+            get
+            {
+                if (currentValue > maxValue) currentValue = maxValue;
+                if (currentValue < minValue) currentValue = minValue;
+                return currentValue;
+            }
             set
             {
                 currentValue += value;

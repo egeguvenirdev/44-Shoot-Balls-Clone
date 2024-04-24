@@ -107,7 +107,7 @@ public abstract class EnemyBase : PoolableObjectBase, IDamageable
         hitText.SetTheText("", (int)damage, Color.red, transform.position);
         vibration.SoftVibration();
 
-        var particle = pooler.GetPooledObjectWithType(PoolObjectType.BloodParticle);
+        var particle = pooler.GetPooledObjectWithType(PoolObjectType.BallHitParticle);
         particle.gameObject.SetActive(true);
         particle.transform.position = transform.position;
         particle.Init();

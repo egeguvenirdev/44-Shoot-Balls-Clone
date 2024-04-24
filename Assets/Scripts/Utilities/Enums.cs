@@ -23,7 +23,7 @@ public enum EnemyType
 public enum PoolObjectType
 {
     Ball,
-    BloodParticle,
+    BallHitParticle,
     SlideText
 }
 

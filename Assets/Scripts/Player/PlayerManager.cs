@@ -26,13 +26,14 @@ public class PlayerManager : MonoBehaviour
         moneyManager = MoneyManager.Instance;
       
         ballMachine.Init();
+        shooter.Init(ballMachine);
     }
 
     public void OnGameStart()
     {
         OnStartShooting();
         runnerScript.Init();
-        shooter.Init(ballMachine);
+        shooter.OnGameStart();
     }
 
     public void DeInit()

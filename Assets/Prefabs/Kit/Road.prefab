@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8420026450701526131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FactoryBand
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1415b1dc08208146a1001997bc73d3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1415b1dc08208146a1001997bc73d3a, type: 3}
 --- !u!4 &8310064967235904322 stripped
@@ -170,6 +174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 127015d8a8abfd84485099c6ebca36b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127015d8a8abfd84485099c6ebca36b3, type: 3}
 --- !u!4 &8310064967055672876 stripped
@@ -177,3 +185,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 127015d8a8abfd84485099c6ebca36b3, type: 3}
   m_PrefabInstance: {fileID: 8420026452077502919}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8653834512246365334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 127015d8a8abfd84485099c6ebca36b3, type: 3}
+  m_PrefabInstance: {fileID: 8420026452077502919}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &491525457659030722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653834512246365334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.1, y: 1.7122436, z: 10.1}
+  m_Center: {x: 0, y: -0.8561193, z: -0.00000047683716}

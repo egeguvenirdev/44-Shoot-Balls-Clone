@@ -19,7 +19,7 @@ public static class CoroutineManager
         {
             var waitForSecondsData = new WaitForSecondsData(desiredTime, desiredTimeDisposeCoolDown);
             waitForSecondsPool.Add(desiredTime, waitForSecondsData);
-            Debug.Log($"WaitForSecondsPool Adding {desiredTime} Size {waitForSecondsPool.Count}");
+            //Debug.Log($"WaitForSecondsPool Adding {desiredTime} Size {waitForSecondsPool.Count}");
             return waitForSecondsData.WaitForSeconds;
         }
     }

@@ -23,7 +23,6 @@ public class BenchBall : MonoBehaviour
 
     public void Init(Vector3 positionOfBall, float ballValue, float speedMultiplier)
     {
-        Debug.Log(speedMultiplier);
         CurrentBallValue = ballValue;
 
         ballElements.SetActive(true);
