@@ -7,6 +7,7 @@ public class Basketball : PoolableObjectBase
 {
     [Header("Components")]
     [SerializeField] private Collider col;
+    [SerializeField] private GameObject col2;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject[] balls;
     private ObjectPooler pooler;
@@ -21,6 +22,8 @@ public class Basketball : PoolableObjectBase
 
     private float ballValue = 0.5f;
 
+    public float BallValue { get => ballValue; set => ballValue = value; }
+
     private void Start()
     {
         pooler = ObjectPooler.Instance;
@@ -29,7 +32,8 @@ public class Basketball : PoolableObjectBase
     public override void Init()
     {
         col.enabled = true;
-        col.isTrigger = true;
+        col.gameObject.SetActive(true);
+        col2.SetActive(false);
         rb.isKinematic = true;
         rb.useGravity = false;
 
@@ -42,11 +46,14 @@ public class Basketball : PoolableObjectBase
     public void DeInit()
     {
         col.enabled = false;
+        rb.isKinematic = false;
+        rb.useGravity = true;
         transform.parent = pooler.transform;
     }
 
     public void SetSkin(float ballValue)
     {
+        this.BallValue = ballValue;
         if (ballValue > 30)
         {
             balls[2].SetActive(true);
@@ -63,9 +70,7 @@ public class Basketball : PoolableObjectBase
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("TEST");
         PoolableObjectBase particle = pooler.GetPooledObjectWithType(PoolObjectType.BallHitParticle);
-        Debug.Log(particle);
         particle.transform.position = transform.position;
         particle.gameObject.SetActive(true);
         particle.Init();
@@ -74,14 +79,17 @@ public class Basketball : PoolableObjectBase
     public void ThrowTheBall(Transform target, float distance)
     {
         col.enabled = true;
-        col.isTrigger = false;
         rb.isKinematic = false;
         rb.useGravity = true;
 
         if (target != null)
         {
-            transform.parent = target;
-            transform.DOLocalJump(target.localPosition, jumpHeight, 1, jumpDuration).SetEase(throwEase);
+            transform.parent = target.parent;
+            transform.DOLocalJump(target.localPosition, jumpHeight / 2, 1, jumpDuration).SetEase(throwEase).OnComplete(
+                () =>
+                {
+                    StartCoroutine(CoolDown());
+                });
         }
         else
         {
@@ -89,9 +97,16 @@ public class Basketball : PoolableObjectBase
             transform.DOLocalJump(jumpPos, jumpHeight, 1, jumpDuration).SetEase(throwEase).OnComplete(
                 () =>
                 {
-
-                    rb.AddForce(new Vector3(Random.Range(-0.5f, 0.5f), 0, 3) * forceValue);
+                    col2.SetActive(true);
+                    rb.AddForce(new Vector3(Random.Range(-0.3f, 0.3f), 0, 3) * forceValue);
                 });
         }
+    }
+
+    private IEnumerator CoolDown()
+    {
+        yield return CoroutineManager.GetTime(0.1f, 30f);
+        col.gameObject.SetActive(false);
+        col2.SetActive(true);
     }
 }

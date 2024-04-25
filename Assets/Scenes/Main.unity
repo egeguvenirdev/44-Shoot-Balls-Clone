@@ -398,7 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2439711950884538189, guid: 6c743645454a09b46a8e2b42a6fa460c, type: 3}
       propertyPath: clearPlayerPrefs
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2439711950884538190, guid: 6c743645454a09b46a8e2b42a6fa460c, type: 3}
       propertyPath: m_Name
@@ -933,6 +933,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7911831031398862799, guid: c84cd1bedf0433e47a69ab3cd5aec63b, type: 3}
   m_PrefabInstance: {fileID: 2110089028560563104}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5091139347124831761
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5091139347119539649, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_Name
+      value: ' Basketball Hoop'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091139347119539651, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5902808183862604599b3b38ccd73a20, type: 3}
 --- !u!1001 &6334440344454329375
 PrefabInstance:
   m_ObjectHideFlags: 0

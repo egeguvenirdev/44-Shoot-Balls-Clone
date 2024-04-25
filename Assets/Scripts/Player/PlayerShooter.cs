@@ -16,6 +16,7 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private float shootingCooldown = 1f;
     [SerializeField] private float shootingGrabCooldown = 1f;
     [SerializeField] private float shootingThrowCooldown = 1f;
+    [SerializeField] private float rangeReducer = 0.75f;
     [SerializeField] private LayerMask layer;
     private ShootableObjInfo currentTargetInfos;
     private bool canShoot = true;
@@ -45,19 +46,27 @@ public class PlayerShooter : MonoBehaviour
 
     private void OnUpdate(float deltaTime)
     {
-        if (!canShoot) return;
+
 
         Ray ray = new Ray(laserPoint.position, transform.forward * 5);
         RaycastHit hit;
-        Debug.DrawRay(laserPoint.position, transform.forward * range, Color.red);
+        Debug.DrawRay(laserPoint.position, transform.forward * range * rangeReducer, Color.red);
 
-        if (Physics.Raycast(ray, out hit, range, layer))
+        if (Physics.Raycast(ray, out hit, range * rangeReducer, layer))
         {
+            Debug.Log(hit.transform.parent + " / " + hit.transform.name);
             if (hit.transform.TryGetComponent(out ShootableObjectBase shootable))
             {
+                if (!canShoot) return;
                 currentTargetInfos = shootable.Infos;
+                shootable.Init();
                 StartCoroutine(TargetCoolDown());
-            }
+            } 
+        }
+        else
+        {
+            Debug.Log("no target");
+            currentTargetInfos = new();
         }
     }
 
@@ -85,18 +94,10 @@ public class PlayerShooter : MonoBehaviour
             Basketball ball = InstantiateBall(ballMachine.GetBalls());
             //BURADA PARENTLA
 
-            if (currentTargetInfos.ballTargetPos != null)
-            {
-
-            }
-            else
-            {
-
-            }
-
             //wait for animation to throw
             yield return CoroutineManager.GetTime((shootingThrowCooldown - shootingGrabCooldown) / speedMultiplier, 30f);
             //BURADA PARENTTAN CIKAR
+            if(currentTargetInfos.ballTargetPos != null) Debug.Log(currentTargetInfos.ballTargetPos);
             ball.ThrowTheBall(currentTargetInfos.ballTargetPos, range);
 
 
@@ -118,6 +119,7 @@ public class PlayerShooter : MonoBehaviour
         Basketball ball = pooler.GetPooledObjectWithType(PoolObjectType.Ball).GetComponent<Basketball>();
         ball.gameObject.SetActive(true);
         ball.transform.position = instantiatePoint.position;
+        ball.Init();
         ball.SetSkin(ballValueballValue);
         return ball;
     }

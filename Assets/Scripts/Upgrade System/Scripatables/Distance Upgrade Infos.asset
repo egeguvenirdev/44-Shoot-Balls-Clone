@@ -16,4 +16,4 @@ MonoBehaviour:
     upgradeType: 4
     minValue: 10
     maxValue: 20
-    currentValue: 5
+    currentValue: 10
