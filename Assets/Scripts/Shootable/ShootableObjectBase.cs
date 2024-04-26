@@ -19,7 +19,16 @@ public abstract class ShootableObjectBase : MonoBehaviour
     [SerializeField] private float followDuration;
     [SerializeField] private float followDistance;
 
-    [SerializeField] private ShootableObjInfo infos;
+    [Header("Collectable Object Settings")]
+    [SerializeField] protected bool canCollectable;
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private float jumpDuration;
+    [SerializeField] private float forwardSpeed = 2f;
+    [SerializeField] private Ease throwEase = Ease.Linear;
+    private bool canMove;
+    private bool canMoveWithPlayer = true;
+
+    private ShootableObjInfo infos;
 
     internal ShootableObjInfo Infos { get => infos; set => infos = value; }
 
@@ -31,19 +40,35 @@ public abstract class ShootableObjectBase : MonoBehaviour
         }
 
         infos = new ShootableObjInfo(ballTargetPos, upgradeType, value, followDuration);
+        text.text = "" + value;
+        if (value <= 0) text.color = Color.red;
     }
 
     public virtual void Init()
     {
-        StartCoroutine(StartMoving());
+        if (canMoveWithPlayer) StartCoroutine(StartMoving());
     }
 
-    protected void OnTriggerEnter(Collider other)
+    public virtual void DeInit()
     {
-        Debug.Log("basket potasinda carpisma");
-        if(other.transform.parent.TryGetComponent(out Basketball ball))
+        canMove = false;
+        this.DOKill();
+    }
+
+    private void Update()
+    {
+        if (canMove) transform.position += Vector3.forward * forwardSpeed;
+    }
+
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other);
+        if (other.transform.parent.TryGetComponent(out Basketball ball))
         {
-            GetBallValue(ball.BallValue);
+            if(ball.transform.parent == transform) GetBallValue(ball.BallValue);
+            ball.transform.parent = null;
+            other.isTrigger = false;
+            if (canCollectable) ball.DeInit();
         }
     }
 
@@ -51,11 +76,28 @@ public abstract class ShootableObjectBase : MonoBehaviour
 
     private IEnumerator StartMoving()
     {
+        canMoveWithPlayer = false;
         transform.DOMove(transform.position + Vector3.forward * followDistance, followDuration);
+
         yield return CoroutineManager.GetTime(followDuration, 15f);
+
         for (int i = 0; i < col.Length; i++)
         {
             col[i].enabled = false;
         }
+    }
+
+    protected void JumpOnToBand()
+    {
+        Vector3 jumpTargetPos = new Vector3(-3.021f, 0, transform.position.z + 5);
+        transform.DOJump(jumpTargetPos, jumpHeight / 2, 1, jumpDuration).SetEase(throwEase).OnComplete(
+            () =>
+            {
+                for (int i = 0; i < col.Length; i++)
+                {
+                    col[i].enabled = false;
+                }
+                canMove = true;
+            });
     }
 }

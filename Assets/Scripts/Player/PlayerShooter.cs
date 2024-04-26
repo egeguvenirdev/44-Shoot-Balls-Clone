@@ -19,7 +19,6 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private float rangeReducer = 0.75f;
     [SerializeField] private LayerMask layer;
     private ShootableObjInfo currentTargetInfos;
-    private bool canShoot = true;
 
     private float speedMultiplier = 1;
     private float range = 1;
@@ -54,14 +53,13 @@ public class PlayerShooter : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, range * rangeReducer, layer))
         {
-            Debug.Log(hit.transform.parent + " / " + hit.transform.name);
+            Debug.Log(hit.transform.name);
             if (hit.transform.TryGetComponent(out ShootableObjectBase shootable))
             {
-                if (!canShoot) return;
                 currentTargetInfos = shootable.Infos;
                 shootable.Init();
-                StartCoroutine(TargetCoolDown());
-            } 
+                //StartCoroutine(TargetCoolDown());
+            }
         }
         else
         {
@@ -97,21 +95,12 @@ public class PlayerShooter : MonoBehaviour
             //wait for animation to throw
             yield return CoroutineManager.GetTime((shootingThrowCooldown - shootingGrabCooldown) / speedMultiplier, 30f);
             //BURADA PARENTTAN CIKAR
-            if(currentTargetInfos.ballTargetPos != null) Debug.Log(currentTargetInfos.ballTargetPos);
-            ball.ThrowTheBall(currentTargetInfos.ballTargetPos, range);
 
+            ball.ThrowTheBall(currentTargetInfos.ballTargetPos, range);
 
             //wait for the animation to complete
             yield return CoroutineManager.GetTime(shootingCooldown / speedMultiplier, 30f);
         }
-    }
-
-    private IEnumerator TargetCoolDown()
-    {
-        canShoot = false;
-        yield return CoroutineManager.GetTime(currentTargetInfos.followDuration, 30f);
-        currentTargetInfos = new();
-        canShoot = true;
     }
 
     public Basketball InstantiateBall(float ballValueballValue)

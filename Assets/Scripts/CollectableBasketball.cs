@@ -5,16 +5,22 @@ using VigilanteGamesUtilies;
 using DG.Tweening;
 using TMPro;
 
-public class BasketballHoop : ShootableObjectBase
+public class CollectableBasketball : ShootableObjectBase
 {
     private Tween tween;
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+        base.OnTriggerEnter(other);
+        if (other.CompareTag("Player") && canCollectable && value > 0) JumpOnToBand();
+    }
 
     protected override void GetBallValue(float ballValue)
     {
         tween.Kill();
-        tween = transform.DOPunchScale(Vector3.one * 0.05f, 0.5f, 6).SetUpdate(true);
+        tween = hitEffectPart.DOPunchScale(Vector3.one * 0.2f, 0.5f, 6).SetUpdate(true);
 
-        if (value >= 0) value -= ballValue;
+        if (value >= 0) value += ballValue;
         if (value < 0) value += 1;
 
         text.text = "" + value;
@@ -26,3 +32,4 @@ public class BasketballHoop : ShootableObjectBase
         }
     }
 }
+

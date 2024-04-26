@@ -7,9 +7,9 @@ public class Basketball : PoolableObjectBase
 {
     [Header("Components")]
     [SerializeField] private Collider col;
-    [SerializeField] private GameObject col2;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject[] balls;
+    [SerializeField] private float closeTime = 2f;
     private ObjectPooler pooler;
 
     [Header("Throw Settings")]
@@ -32,8 +32,7 @@ public class Basketball : PoolableObjectBase
     public override void Init()
     {
         col.enabled = true;
-        col.gameObject.SetActive(true);
-        col2.SetActive(false);
+        col.isTrigger = true;
         rb.isKinematic = true;
         rb.useGravity = false;
 
@@ -49,6 +48,7 @@ public class Basketball : PoolableObjectBase
         rb.isKinematic = false;
         rb.useGravity = true;
         transform.parent = pooler.transform;
+        gameObject.SetActive(false);
     }
 
     public void SetSkin(float ballValue)
@@ -88,7 +88,7 @@ public class Basketball : PoolableObjectBase
             transform.DOLocalJump(target.localPosition, jumpHeight / 2, 1, jumpDuration).SetEase(throwEase).OnComplete(
                 () =>
                 {
-                    StartCoroutine(CoolDown());
+                    if (gameObject.activeInHierarchy) StartCoroutine(CloseTheBall());
                 });
         }
         else
@@ -97,16 +97,16 @@ public class Basketball : PoolableObjectBase
             transform.DOLocalJump(jumpPos, jumpHeight, 1, jumpDuration).SetEase(throwEase).OnComplete(
                 () =>
                 {
-                    col2.SetActive(true);
+                    col.isTrigger = false;
                     rb.AddForce(new Vector3(Random.Range(-0.3f, 0.3f), 0, 3) * forceValue);
+                    if (gameObject.activeInHierarchy) StartCoroutine(CloseTheBall());
                 });
         }
     }
 
-    private IEnumerator CoolDown()
+    private IEnumerator CloseTheBall()
     {
-        yield return CoroutineManager.GetTime(0.1f, 30f);
-        col.gameObject.SetActive(false);
-        col2.SetActive(true);
+        yield return CoroutineManager.GetTime(closeTime, 20f);
+        if (gameObject.activeInHierarchy) DeInit();
     }
 }
