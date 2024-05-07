@@ -9,3 +9,4 @@ Recordings/
 *.csproj
 *.log
 
+.DS_Store
