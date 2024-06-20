@@ -1060,6 +1060,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 853810602, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 853810602, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 853810603, guid: 5902808183862604599b3b38ccd73a20, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5091139347119539649, guid: 5902808183862604599b3b38ccd73a20, type: 3}
       propertyPath: m_Name
       value: ' Basketball Hoop'

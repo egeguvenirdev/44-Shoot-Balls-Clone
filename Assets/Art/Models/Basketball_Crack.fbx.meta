@@ -3,7 +3,37 @@ guid: 7804c97d9a99d4d7fab8290ba7a6b5c3
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome
+    second: {fileID: 2100000, guid: 853e96cbbffe3bb48a82db7e5ffef1f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gum
+    second: {fileID: 2100000, guid: df0979b07b2e6884c88285dd9849caba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV
+    second: {fileID: 2100000, guid: d15b9b28738edde429caf2b3e33d2c1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2
+    second: {fileID: 2100000, guid: 329bfa62ba4810c46a8c285c2b0fa71d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: 404af44468524f6488728ee6cbb90f8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong6
+    second: {fileID: 2100000, guid: 10955f65dc0495346845ab28a5c837ea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
